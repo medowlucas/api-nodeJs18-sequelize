@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: mitra-node-api
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      DB_HOST: 192.168.237.65
+      DB_PORT: 5438
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: _ativa
